@@ -44,7 +44,7 @@ class Settings(BaseSettings):
 
     # Paths
     data_dir: str = Field(default="data", alias="DATA_DIR")
-    sales_excel_path: str = Field(default="data/Sales.xlsx", alias="SALES_EXCEL_PATH")
+    sales_excel_path: str = Field(default="data/Sales Info V2 .xlsx", alias="SALES_EXCEL_PATH")
     timesheet_excel_path: str = Field(
         default="data/Timesheet.xlsx", alias="TIMESHEET_EXCEL_PATH"
     )
