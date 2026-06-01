@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/health",
+      "dest": "app/main.py"
+    },
+    {
+      "src": "/text-to-sql/(.*)",
+      "dest": "app/main.py"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "app/main.py"
+    },
+    {
+      "src": "/chat",
+      "dest": "app/main.py"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
