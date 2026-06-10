@@ -12,6 +12,7 @@ from sqlalchemy.exc import OperationalError
 
 from app.api.routes import router as api_router
 from app.api.text_to_sql_routes import router as text_to_sql_router
+from app.api.designer_routes import router as designer_router
 from app.db.session import Base, engine
 
 logging.basicConfig(level=logging.INFO)
@@ -51,6 +52,7 @@ app.add_middleware(
 
 app.include_router(api_router)
 app.include_router(text_to_sql_router)
+app.include_router(designer_router)
 
 
 @app.get("/health")

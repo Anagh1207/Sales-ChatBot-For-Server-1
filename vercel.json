@@ -23,6 +23,10 @@
       "dest": "app/main.py"
     },
     {
+      "src": "/api/(.*)",
+      "dest": "app/main.py"
+    },
+    {
       "src": "/admin/(.*)",
       "dest": "app/main.py"
     },
